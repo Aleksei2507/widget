@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/Helvetica.ttf") format("truetype");
+}
+
+:root {
+  --btnColor: #f57c00;
+  --backgoundColor: #4a90e2;
+  --phoneWidth: calc(100% / 2);
+  --tableWidth: calc(100% / 3);
+  --fullWidth: calc(100% / 4);
+  --maxSizeContainer: 1024px;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Helvetica";
+}
+
+.container {
+  display: flex;
+  background-color: var(--backgoundColor);
+  padding: 10px 25px 15px;
+  flex-wrap: wrap;
+  max-width: var(--maxSizeContainer);
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  color: #ffffff;
+  width: 100%;
+  margin-bottom: 15px;
+  order: 0;
+}
+
+.description {
+  font-size: 10px;
+  color: #ffffff;
+  line-height: 13px;
+  width: 100%;
+  order: 5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 440px) {
+  .description {
+    order: 0;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .react-datepicker-wrapper {
+    width: calc(var(--phoneWidth) - 1%);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .react-datepicker-wrapper {
+    width: calc(var(--tableWidth) - 2%);
+  }
+
+  .button {
+    width: calc(var(--tableWidth));
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .description {
+    width: calc(var(--fullWidth) - 2%);
+    margin-right: 15px;
+  }
+
+  .form {
+    width: calc(100% - var(--fullWidth));
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
